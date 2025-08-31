@@ -115,6 +115,13 @@ export interface UserOrder {
      * Address of the order taker. The zero address is used to indicate a public order
      */
     taker?: string;
+
+    /**
+     * Specifies the type of order execution for limit orders:
+     * - GTC (Good Till Canceled): The order remains active until it is filled or manually canceled.
+     * - GTD (Good Till Date): The order remains active until the specified expiration time.
+     */
+    orderType?: OrderType.GTC | OrderType.GTD;
 }
 
 // Simplified market order for users
@@ -157,7 +164,7 @@ export interface UserMarketOrder {
     taker?: string;
 
     /**
-     * Specifies the type of order execution:
+     * Specifies the type of order execution for market orders:
      * - FOK (Fill or Kill): The order must be filled entirely or not at all.
      * - FAK (Fill and Kill): The order can be partially filled, and any unfilled portion is canceled.
      */
