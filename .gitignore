@@ -24,3 +24,7 @@ yarn-error.log*
 .DS_Store
 packages/tracker/main
 package-lock.json
+
+# Compiled JavaScript files (TypeScript source is the source of truth)
+src/**/*.js
+examples/**/*.js
